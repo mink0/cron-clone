@@ -1,0 +1,31 @@
+# source dirs are located here
+SRC_USER=mmekhanov
+SRC_HOST=uds-flow-clu01.moscow.eurochem.ru
+
+# right key will be used when it will be run as root
+SSH_KEY=/home/nd_tasks/.ssh/id_rsa
+
+# chown downaloded files if DST_USER is set
+DST_USER=noodoo
+
+# to use scp to copy dirs:
+# CLONE_TYPE=scp
+# to use rsync to copy dirs:
+# CLONE_TYPE=rsync
+# NB: we can't use rsync to copy from nfs to xfs without permission set errors
+CLONE_TYPE=scp
+
+# List of directories to clone if format:
+# SRC_DIR[n]=/some/source/dir
+# DST_DIR[n]=/some/dst/dir
+# ...
+# Place 20 dirs max here, see syn_dirs.sh @main for details
+SRC_DIR1=/home/flow/noodoo/current/organizers/companies/public/uploads
+DST_DIR1=/var/www/noodoo/app/organizers/companies/public
+
+SRC_DIR2=/home/flow/noodoo/current/organizers/deals/public/uploads
+DST_DIR2=/var/www/noodoo/app/organizers/deals/public
+
+SRC_DIR3=/home/flow/noodoo/current/organizers/shipments/public/uploads
+DST_DIR3=/var/www/noodoo/app/organizers/shipments/public
+

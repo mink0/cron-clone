@@ -1,0 +1,24 @@
+# dump files are located here
+SRC_HOST=uds-flow-db01.moscow.eurochem.ru
+SRC_DIR=/backup
+DUMP_FILE=flow_production_latest.sql.gz
+
+# user at the destination host for scp command
+SSH_USER=so
+# ssh key to login to SRC_HOST
+SSH_KEY=/home/nd_tasks/.ssh/id_rsa
+
+# dump file will be downloaded here
+DST_DIR=/opt/nd-clone/backup
+
+# the following database will be REPLACED!
+DST_DB_HOST=uds-db-test.moscow.eurochem.ru
+DST_DB_NAME=flow_testing
+DST_DB_USER=flow
+DST_DB_PWD='superpass'
+
+# if FLUSH_DB is set db will be recreated
+#FLUSH_DB=true
+
+# all data will be piped through FILTER if FILTER is set
+#FILTER="sed 's/\/\*[^*]*DEFINER=[^*]*\*\///g'"

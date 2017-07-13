@@ -1,0 +1,26 @@
+# Warning! Db will be locked during dump
+SRC_HOST=db-uds-prod.moscow.eurochem.ru
+SRC_DB=flexible_prod
+SRC_USER=clone_script
+SRC_PWD="'secret1'"
+
+# only selected tables will be cloned if SRC_TABLES is set
+#SRC_TABLES=( 'bb_flow_deals' 'bb_flow_shipments' 'bb_flow_plan_fact' )
+
+# the following database will be REPLACED!
+DST_HOST=db-uds-dev.moscow.eurochem.ru
+DST_DB=bubo_staging
+DST_USER=clone_script
+DST_PWD="'secret2'"
+
+# backup of DST_DB with will be created if BACKUP_DIR is set
+# if SRC_TABLES is set only SRC_TABLES will be backuped
+# don't use this option with FLUSH_DB=true or with an empty DST_DB 
+# (or if you don't have SRC_TABLES in DST_DB)
+#BACKUP_DIR=/opt/nd-clone/backup
+
+# all data will be piped through FILTER if FILTER is set
+#FILTER="sed 's/\/\*[^*]*DEFINER=[^*]*\*\///g'"
+
+# if FLUSH_DB is set db will be recreated
+#FLUSH_DB=true

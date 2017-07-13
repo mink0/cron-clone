@@ -1,0 +1,4 @@
+backup
+logs
+*/*.conf
+clone.sh

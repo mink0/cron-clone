@@ -1,0 +1,4 @@
+ND_PATH=/var/www/app
+ND_ENV=production
+CMD='node tasks migrate -k'
+
